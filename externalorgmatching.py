@@ -13,10 +13,6 @@ import numpy as np
 import cx_Oracle
 import oraclecon as con
 
-# subprocess.call([r'C:\Python\instantclient.bat'])
-
-
-
 #load external orgs from file from Liaison
 df = pd.read_excel('N:\\eApp\\Liaison\\LiaisonExternalOrgs\\LiaisonMasterCollegeCodeList.xlsx', skiprows=1, usecols = "A:D", names = ['orgname','state','country','mdbcode'])
 df.replace({r'[^\x00-\x7F]+':''}, regex=True, inplace=True)
@@ -46,9 +42,8 @@ WHERE
 #a.ext_org_cntry_cd in ('CAN','CHN','IND', 'GBR')
 dfiu = pd.read_sql_query(strsql, engine)
 dfiu['orgname'] = dfiu['orgname'].str.upper()
-dfiu['orgtype'] = ""
+dfiu['orgtype'] = ''
 dfiu['orgmatch'] = dfiu['orgname']
-
 
 
 df.loc[df['orgname'].str.contains(r'UNIV'), 'orgtype'] = 'UNIVERSITY'
