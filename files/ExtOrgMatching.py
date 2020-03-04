@@ -13,6 +13,9 @@ import ExtOrgClass as eo
 dfl = pd.read_excel('N:\\eApp\\Liaison\\LiaisonExternalOrgs\\LiaisonMasterCollegeCodeList.xlsx', skiprows=1, usecols = "A:D", names = ['orgname','state','country','mdbcode'])
 
 for ind in dfl.index:
-     if
-     print(df['country'][ind])
+    if dfl['country'][ind] == 'KE':
+        print(dfl['orgname'][ind])
+
+#     if
+#     print(df['country'][ind])
 
