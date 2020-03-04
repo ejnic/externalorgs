@@ -11,5 +11,8 @@ import ExtOrgClass as eo
 
 #load external orgs from file from Liaison
 dfl = pd.read_excel('N:\\eApp\\Liaison\\LiaisonExternalOrgs\\LiaisonMasterCollegeCodeList.xlsx', skiprows=1, usecols = "A:D", names = ['orgname','state','country','mdbcode'])
-dforgs = eo.Orgs()
+
+for ind in dfl.index:
+     if
+     print(df['country'][ind])
 
